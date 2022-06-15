@@ -1,10 +1,8 @@
 import Layout from "../components/layout";
 import Link from "next/link";
-import "../styles/nprogress.css"
 
 const Index = () => {
   return (
-    <div>
     <Layout>
       <article className="overflow-hidden">
         <div className="container mt-5">
@@ -108,7 +106,6 @@ const Index = () => {
         </div>
       </article>
     </Layout>
-    </div>
   );
 };
 

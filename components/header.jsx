@@ -13,7 +13,7 @@ Router.onRouteChangeError = url => Nprogress.done();
 const Header = () => {
   return (
 
-    <>
+  
     <Nav>
       <Link href="/" passHref>
         <Logo>SCI-FI BLOGS</Logo>
@@ -52,8 +52,7 @@ const Header = () => {
         )}
       </Menu>
     </Nav>
-   
-    </>
+  
   );
 };
 
