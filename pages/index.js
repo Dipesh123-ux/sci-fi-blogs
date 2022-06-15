@@ -29,19 +29,19 @@ const Index = () => {
           <div className="row tt">
             <div className="col-md-4">
               <div className="c">
-                <div class="card-header">
+                <div className="card-header">
                   <img
                     src="/1_HcRuVYDrcjvOKhiEHbAV2w.png"
                     alt="rover"
                   />
                 </div>
-                <div class="card-body">
-                  <span class="tag tag-teal">Christopher Nolan</span>
+                <div className="card-body">
+                  <span className="tag tag-teal">Christopher Nolan</span>
                   <span style={{ color: "black" }} class="tag t-one">
                     #science fiction
                   </span>
                   <Link href="/blogs">
-                    <h4 class="card-link mt-4">
+                    <h4 className="card-link mt-4">
                       Why is the Tesla Cybertruck designed the way it is?
                     </h4>
                   </Link>
@@ -52,17 +52,17 @@ const Index = () => {
             </div>
 
             <div className="col-md-4">
-              <div class="c">
-                <div class="card-header">
+              <div className="c">
+                <div className="card-header">
                   <img src="/1224268.jpg" alt="rover" />
                 </div>
-                <div class="card-body">
-                  <span class="tag tag-teal">Marvel</span>
+                <div className="card-body">
+                  <span className="tag tag-teal">Marvel</span>
                   <span style={{ color: "black" }} class="tag t-one">
                     #moon_knight
                   </span>
                   <Link href="/blogs">
-                    <h4 class="card-link mt-4">
+                    <h4 className="card-link mt-4">
                       Moon Knight Is Unlike Any Other Superhero Show
                     </h4>
                   </Link>
@@ -75,22 +75,22 @@ const Index = () => {
             </div>
 
             <div className="col-md-4">
-              <div class="c">
-                <div class="card-header">
+              <div className="c">
+                <div className="card-header">
                   <img
                     src="/MV5BODZlYjQ4NzYtZTg1MC00NGY4LTg4NjQtNGE3ZjRkMjk3YjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY1200_CR165,0,630,1200_AL_.jpg"
                     alt="rover"
                   />
                 </div>
-                <div class="card-body">
+                <div className="card-body">
       
                 
-                  <span class="tag tag-teal">Netflix</span>
+                  <span className="tag tag-teal">Netflix</span>
                   <span style={{ color: "black" }} class="tag t-one">
                     #stranger_things
                   </span>
                   <Link href="/blogs">
-                    <h4 class="card-link mt-4">
+                    <h4 className="card-link mt-4">
                       We Need to Talk About the Stranger Things Season 4
                     </h4>
                   </Link>
