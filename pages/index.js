@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const Index = () => {
   return (
+    <div>
     <Layout>
       <article className="overflow-hidden">
         <div className="container mt-5">
@@ -106,6 +107,7 @@ const Index = () => {
         </div>
       </article>
     </Layout>
+    </div>
   );
 };
 
