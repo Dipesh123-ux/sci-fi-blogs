@@ -4,6 +4,8 @@ import { Router } from "next/router";
 import { isAuth } from "../../actions/auth";
 import Link from "next/link";
 
+
+
 const AdminIndex = () => {
   useEffect(() => {
     if (!isAuth()) {
@@ -17,7 +19,7 @@ const AdminIndex = () => {
     <Layout>
       <div className="container-fluid mt-5">
         <div className="row">
-          <h1 className="main-head">Hello {isAuth().name}</h1>
+          <h1 className="main-head">Hello Admin</h1>
         </div>
        <div className="all">
         <div className="row ">
@@ -60,7 +62,7 @@ const AdminIndex = () => {
             </Link>
           </div>
           <div className="col-md-6">
-            <Link href="/admin/crud/blogs">
+            <Link href="/user/crud/blogs">
               <a>
                 <div class="admin-option ">
                   <div class="icon-set">
@@ -74,7 +76,7 @@ const AdminIndex = () => {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <Link href="/admin/crud/blogs">
+            <Link href="/user/crud/blogs">
               <a>
                 <div class="admin-option">
                   <div class="icon-set">

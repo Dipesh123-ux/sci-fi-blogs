@@ -104,11 +104,11 @@ export const list = username => {
 export const removeBlog = (slug, token) => {
   let deleteBlogEndpoint;
 
-  if (isAuth() && isAuth().role === 1) {
-      deleteBlogEndpoint = `${API}/blog/${slug}`;
-  } else if (isAuth() && isAuth().role === 0) {
+  // if (isAuth() && isAuth().role === 1) {
+  //     deleteBlogEndpoint = `${API}/blog/${slug}`;
+  // } else if (isAuth() && isAuth().role === 0) {
       deleteBlogEndpoint = `${API}/user/blog/${slug}`;
-  }
+  // }
 
   return fetch(`${deleteBlogEndpoint}`, {
       method: 'DELETE',
@@ -127,11 +127,11 @@ export const removeBlog = (slug, token) => {
 export const updateBlog = (blog, token, slug) => {
   let updateBlogEndpoint;
 
-  if (isAuth() && isAuth().role === 1) {
-      updateBlogEndpoint = `${API}/blog/${slug}`;
-  } else if (isAuth() && isAuth().role === 0) {
+  // if (isAuth() && isAuth().role === 1) {
+  //     updateBlogEndpoint = `${API}/blog/${slug}`;
+  // } else if (isAuth() && isAuth().role === 0) {
       updateBlogEndpoint = `${API}/user/blog/${slug}`;
-  }
+  // }
 
   return fetch(`${updateBlogEndpoint}`, {
       method: 'PUT',

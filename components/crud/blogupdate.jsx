@@ -25,7 +25,7 @@ const BlogUpdate = ({ router }) => {
       title: '',
       error: '',
       success: '',
-      formData: new FormData(),
+      formData: '',
       title: '',
       body: ''
   });
@@ -177,14 +177,17 @@ const BlogUpdate = ({ router }) => {
 
   const handleChange = name => e => {
       // console.log(e.target.value);
+      const formdata = new FormData();
       const value = name === 'photo' ? e.target.files[0] : e.target.value;
-      formData.set(name, value);
-      setValues({ ...values, [name]: value, formData, error: '' });
+      formdata.set(name, value);
+      setValues({ ...values, [name]: value, formData : formdata, error: '' });
   };
 
   const handleBody = e => {
+     const formdata = new FormData();
       setBody(e);
-      formData.set('body', e);
+      formdata.set('body', e);
+      setValues({ ...values, formData : formdata });
   };
 
   const editBlog = e => {

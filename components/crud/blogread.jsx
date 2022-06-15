@@ -49,13 +49,13 @@ const BlogRead = ({username }) => {
   };
 
   const showUpdateButton = (blog) => {
-    if (isAuth() && isAuth().role == 0) {
-      return <Link href={`/user/crud/${blog.slug}`}>
-         <a className="btn btn-dark ms-2"><i className="fa fa-edit"></i></a>
-        </Link>
-    } 
+    // if (isAuth() && isAuth().role == 0) {
+    //   return <Link href={`/user/crud/${blog.slug}`}>
+    //      <a className="btn btn-dark ms-2"><i className="fa fa-edit"></i></a>
+    //     </Link>
+    // } 
      if (isAuth() && isAuth().role == 1) {
-      return  <Link href={`/admin/crud/${blog.slug}`}>
+      return  <Link href={`/user/crud/${blog.slug}`}>
           <a className="btn btn-dark ms-2"><i className="fa fa-edit"></i></a>
           </Link>
     }

@@ -5,13 +5,13 @@ import { isAuth } from "../../../actions/auth";
 import Link from "next/link";
 import BlogUpdate from "../../../components/crud/blogupdate"
 
+const isA = isAuth() || false;
+
 const UpdateBlog = () => {
   useEffect(() => {
-    if (!isAuth()) {
+    if (!isA) {
       Router.push("/signin");
-    } else if (isAuth().role !== 1) {
-      Router.push("/");
-    }
+    } 
   }, []);
 
   return (
