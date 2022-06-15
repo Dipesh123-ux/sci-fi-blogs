@@ -2,9 +2,8 @@ import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();
 
-export const API = publicRuntimeConfig.PRODUCTION
-  ? "https://sci-fi-blogs.herokuapp.com/api"
-  : "http://localhost:8080/api";
+export const API ="https://sci-fi-blogs.herokuapp.com/api";
+
 export const APP_NAME = "SCI-FI-BLOGS";
 
 export const DOMAIN ="https://sci-fi-blogs.herokuapp.com/api"
