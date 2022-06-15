@@ -1,5 +1,5 @@
-import Layout from '../../../components/Layout';
-import BlogUpdate from '../../../components/crud/BlogUpdate';
+import Layout from '../../../components/layout';
+import BlogUpdate from '../../../components/crud/blogupdate';
 import { Router } from "next/router";
 import { isAuth } from "../../../actions/auth";
 import { useEffect } from "react";

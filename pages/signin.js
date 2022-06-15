@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import SignInComponent from "../components/auth/signin";
 import styled from 'styled-components'
 

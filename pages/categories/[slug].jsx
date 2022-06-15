@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout';
 import { singleCategory } from '../../actions/category';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
-import Card from '../../components/blog/Card';
+import Card from '../../components/blog/card';
 
 const Category = ({ category, blogs,query }) => {
 

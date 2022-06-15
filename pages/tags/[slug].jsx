@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout';
 import { singleTag } from '../../actions/tags';
-import Card from '../../components/blog/Card';
+import Card from '../../components/blog/card';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 
 const Tag = ({ tag, blogs,query }) => {
