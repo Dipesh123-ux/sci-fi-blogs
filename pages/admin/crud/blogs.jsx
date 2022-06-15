@@ -1,4 +1,4 @@
-import Layout from "../../../components/Layout";
+import Layout from "../../../components/layout";
 import { useEffect } from "react";
 import { Router } from "next/router";
 import { isAuth } from "../../../actions/auth";
