@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import Link from "next/link";
+import "../styles/nprogress.css"
 
 const Index = () => {
   return (
