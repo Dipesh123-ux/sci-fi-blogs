@@ -31,7 +31,7 @@ const Index = () => {
               <div className="c">
                 <div class="card-header">
                   <img
-                    src="../static/images/1_HcRuVYDrcjvOKhiEHbAV2w.png"
+                    src="/1_HcRuVYDrcjvOKhiEHbAV2w.png"
                     alt="rover"
                   />
                 </div>
@@ -54,7 +54,7 @@ const Index = () => {
             <div className="col-md-4">
               <div class="c">
                 <div class="card-header">
-                  <img src="../static/images/1224268.jpg" alt="rover" />
+                  <img src="/1224268.jpg" alt="rover" />
                 </div>
                 <div class="card-body">
                   <span class="tag tag-teal">Marvel</span>
@@ -78,7 +78,7 @@ const Index = () => {
               <div class="c">
                 <div class="card-header">
                   <img
-                    src="../static/images/MV5BODZlYjQ4NzYtZTg1MC00NGY4LTg4NjQtNGE3ZjRkMjk3YjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY1200_CR165,0,630,1200_AL_.jpg"
+                    src="/MV5BODZlYjQ4NzYtZTg1MC00NGY4LTg4NjQtNGE3ZjRkMjk3YjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY1200_CR165,0,630,1200_AL_.jpg"
                     alt="rover"
                   />
                 </div>
