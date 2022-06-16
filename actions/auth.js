@@ -2,6 +2,21 @@ import fetch from "isomorphic-fetch";
 import { API } from "../config";
 import cookie from "js-cookie";
 
+export const preSignup = user => {
+  return fetch(`${API}/pre-signup`, {
+      method: 'POST',
+      headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+  })
+      .then(response => {
+          return response.json();
+      })
+      .catch(err => console.log(err));
+};
+
 export const signup = (user) => {
   return fetch(`${API}/signup`, {
     method: "POST",
@@ -127,6 +142,35 @@ export const loginWithGoogle = user => {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(user)
+  })
+      .then(response => {
+          return response.json();
+      })
+      .catch(err => console.log(err));
+};
+export const forgotPassword = email => {
+  return fetch(`${API}/forgot-password`, {
+      method: 'PUT',
+      headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(email)
+  })
+      .then(response => {
+          return response.json();
+      })
+      .catch(err => console.log(err));
+};
+
+export const resetPassword = resetInfo => {
+  return fetch(`${API}/reset-password`, {
+      method: 'PUT',
+      headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(resetInfo)
   })
       .then(response => {
           return response.json();

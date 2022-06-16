@@ -7,16 +7,17 @@ const Card = ({blog}) => {
 
 
   const showBlogCategories = blog =>{
-   return blog.categories.map((c,i)=>(
+   return blog.categories.slice(0,2).map((c,i)=>(
       <Link key={i} href={`/categories/${c.slug}`} >
         <a  className="tag cat-all ms-1 mt-3">{c.name}</a>
       </Link>
     ))
   }
   const showBlogTags= blog =>{
-   return blog.tags.map((t,i)=>(
+   return blog.tags.slice(0,2).map((t,i)=>(
+    
       <Link key={i} href={`/tags/${t.slug}`} >
-        <a  className=" ms-1 mt-3">#{t.name}</a>
+        <a  className="tag tag-all ms-2 mt-3">#{t.name}</a>
       </Link>
     ))
   }
@@ -45,23 +46,22 @@ const Card = ({blog}) => {
         </Link>
     </div>
 
-    <div class="blog-summary d-flex">
+    <div class="blog-summary">
    
-      <p className="sub-head-body" dangerouslySetInnerHTML={{__html: blog.excerpt}}></p>
+      <p style={{wordWrap:"break-word"}} dangerouslySetInnerHTML={{__html: blog.excerpt}}></p>
     </div>
     <Link  href={`/blogs/${blog.slug}`}>
           <button id="btn-read" >
           Read more<i className="fa fa-arrow-right ms-1"  ></i>
           </button>
     </Link>
-    <div class="blog-tags d-flex flex-wrap">
+    <div class="d-flex flex-wrap">
       {showBlogCategories(blog)}
-      <br />
       {showBlogTags(blog)}
     </div>
   </div>
   
-  <div class="blog-footer">
+  <div class="blog-footer mt-3">
     <ul>
       <li class="published-date">Published {moment(blog.createdAt).fromNow()}</li>
     </ul>

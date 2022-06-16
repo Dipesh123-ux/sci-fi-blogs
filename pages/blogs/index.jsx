@@ -142,9 +142,9 @@ const Blogs = ({
               </div>
             </header>
           </div>
-          <div className="container-fluid">{showAllBlogs()}</div>
-          <div className="container-fluid">{showLoadedBlog()}</div>
-          <div className="text-center pt-5 pb-5">{loadMoreBtn()}</div>
+          <div  className="container-fluid">{showAllBlogs()}</div>
+          <div  className="container-fluid">{showLoadedBlog()}</div>
+          <div  className="text-center pt-5 pb-5">{loadMoreBtn()}</div>
         </main>
       </Layout>
     </>

@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { signup ,isAuth} from "../../actions/auth";
+import { signup ,isAuth,preSignup} from "../../actions/auth";
 import {RotatingLines} from "react-loader-spinner"
 import Router from "next/router"
 
@@ -30,7 +30,7 @@ const SignupComponent = () => {
 
     const user = { name, email, password };
 
-    signup(user).then((data) => {
+    preSignup(user).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -43,8 +43,6 @@ const SignupComponent = () => {
           message: data.message,
           showForm: false,
         });
-
-        Router.push('/signin')
 
         console.table(name, password, email, error, Loading, message, showForm);
       }
@@ -62,7 +60,7 @@ const SignupComponent = () => {
     error ? <div className="alert alert-danger">{error}</div> : ""
   );
   const showMessage = () => (
-    message ? <div style={{backgroundColor:"pink"}} className="alert alert-info">{message}</div> : ""
+    message ? <div style={{backgroundColor:"silver"}} className="">{message}</div> : ""
   );
 
   const SignupForm = () => {

@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from "react";
 import { signIn ,authenticate ,isAuth} from "../../actions/auth";
 import {RotatingLines} from "react-loader-spinner"
 import Router from "next/router";
+import Link from 'next/link'
 // import LoginGoogle from './googlelogin';
 
 const SignInComponent = () => {
@@ -84,7 +85,7 @@ const SignInComponent = () => {
           />
           <i onClick={()=>setShowPass(!showPass)} style={{position:"absolute",marginTop : "28px",marginRight : "10px",cursor:"pointer"}} className={showPass ? "fas fa-eye-slash" : "fas fa-eye"} ></i>
         </div>
-        <button className="btn  mt-4" style={{backgroundColor : "white" , boxShadow : "0 0 3px white"}} type="submit">
+        <button className="btn mt-4" style={{backgroundColor : "white" , boxShadow : "0 0 3px white"}} type="submit">
           SignIn
         </button>
       </form>
@@ -98,6 +99,10 @@ const SignInComponent = () => {
       {showMessage()}
       <br/>
       {showForm && SignInForm()}
+      <br/>
+      <Link href="/auth/password/forgot">
+                <a className="text-white btn btn-outline-dark w-50 btn-sm">Forgot password</a>
+       </Link>
     </React.Fragment>
   );
 };

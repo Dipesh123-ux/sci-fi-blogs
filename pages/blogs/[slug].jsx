@@ -54,14 +54,14 @@ const SingleBlog = ({ query, blog }) => {
   const showBlogCategories = (blog) =>
     blog.categories.map((c, i) => (
       <Link title="category" key={i} href={`/categories/${c.slug}`}>
-        <a className="tag cat-all t-one">{c.name}</a>
+        <a className="tag cat-all t-one mt-2 me-1">{c.name}</a>
       </Link>
     ));
 
   const showBlogTags = (blog) =>
     blog.tags.map((t, i) => (
       <Link title="tag" key={i} href={`/tags/${t.slug}`}>
-        <a className="tag tag-all">#{t.name}</a>
+        <a className="tag tag-all mt-2 me-1">#{t.name}</a>
       </Link>
     ));
 
@@ -115,20 +115,20 @@ const SingleBlog = ({ query, blog }) => {
                     | Published {moment(blog.updatedAt).fromNow()}
                   </p>
 
-                  <div className="pb-3">
+                  <div className="d-flex flex-wrap">
                     {showBlogCategories(blog)}
+                    </div>
+                    <br />
+                    <div className="d-flex flex-wrap">
                     {showBlogTags(blog)}
-                    <br />
-                    <br />
                   </div>
                 </div>
               </section>
             </div>
 
-            <div className="container">
-              <section>
-                <div className="col-md-12 sub-head">{renderHTML(blog.body)}</div>
-              </section>
+            <div className="container-fluid">
+                <div style={{wordWrap:"break-word"}} className="sub-head">{renderHTML(blog.body)}</div>
+              
             </div>
 
             <div className="container">
