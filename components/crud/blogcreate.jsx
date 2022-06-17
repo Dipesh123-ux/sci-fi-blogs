@@ -31,7 +31,7 @@ const CreateBlog = ({ router }) => {
   const [checked, setChecked] = useState([]); // categories
   const [checkedTag, setCheckedTag] = useState([]); // tags
 
-  const [body, setBody] = useState('');
+  const [body, setBody] = useState(blogFromLS());
   const [values, setValues] = useState({
     error: "",
     sizeError: "",
