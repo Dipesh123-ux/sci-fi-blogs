@@ -91,9 +91,9 @@ const SingleBlog = ({ query, blog }) => {
       <Layout>
         <Body>
           <article>
-            <div style={{marginTop:"100px"}} className="container-fluid mt-5">
+            <div className="container-fluid">
               <section>
-                <div className="row" style={{ marginTop: "-30px" }}>
+                <div className="row" style={{ marginTop: "40px" }}>
                   <img
                     src={`${API}/blog/photo/${blog.slug}`}
                     alt={blog.title}

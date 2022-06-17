@@ -5,6 +5,7 @@ import { withRouter } from 'next/router';
 import { signup } from '../../../../actions/auth';
 import styled from 'styled-components'
 import {RotatingLines} from "react-loader-spinner"
+import Link from 'next/link'
 
 const ActivateAccount = ({ router }) => {
     const [values, setValues] = useState({
@@ -45,8 +46,10 @@ const ActivateAccount = ({ router }) => {
             <div className="container activate">
                 <h4 className="pb-4 main-head text-center">Hey {name}, Ready to activate your account?</h4>
                 {showLoading()}
-                <p className="sub-head">{error && error},
-                {success && 'You have successfully activated your account. Please signin.'}
+                <p className="sub-head">
+                {error && error},
+                {success && 'You have successfully activated your account. Please  '}
+                {success && <Link href="/signin" ><a style={{textDecoration:"underline"}} className="text-center text-white">Sign In</a></Link>}
                 </p>
                 {showButton && (
                     <button className="text-white btn btn-outline-dark" onClick={clickSubmit}>

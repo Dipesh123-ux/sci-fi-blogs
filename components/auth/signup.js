@@ -60,7 +60,7 @@ const SignupComponent = () => {
     error ? <div className="alert alert-danger">{error}</div> : ""
   );
   const showMessage = () => (
-    message ? <div style={{backgroundColor:"silver"}} className="">{message}</div> : ""
+    message ? <div style={{backgroundColor:"silver"}} className="p-4">{message}</div> : ""
   );
 
   const SignupForm = () => {
