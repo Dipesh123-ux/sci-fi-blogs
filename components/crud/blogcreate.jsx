@@ -31,12 +31,12 @@ const CreateBlog = ({ router }) => {
   const [checked, setChecked] = useState([]); // categories
   const [checkedTag, setCheckedTag] = useState([]); // tags
 
-  const [body, setBody] = useState(blogFromLS());
+  const [body, setBody] = useState('');
   const [values, setValues] = useState({
     error: "",
     sizeError: "",
     success: "",
-    formData: "",
+    formData: '',
     title: "",
     hidePublishButton: false,
     loading: false,
@@ -51,15 +51,14 @@ const CreateBlog = ({ router }) => {
     title,
     hidePublishButton,
     loading,
-    reload
   } = values;
   const token = getCookie("token");
 
   useEffect(() => {
-    setValues({ ...values, formData: new FormData() });
+    setValues({ ...values,formData: new FormData() });
     initCategories();
     initTags();
-  }, [router,reload]);
+  }, [router]);
 
   const initCategories = () => {
     getCategories().then(data => {
@@ -95,10 +94,9 @@ const CreateBlog = ({ router }) => {
           loading: false,  
           title: "",
           error: "",
-          reload : !reload,
           success: `A new blog titled "${data.result.title}" is created`
         });
-        setBody("");
+        setBody('');
         setCategories([]);
         setTags([]);
       }
@@ -109,10 +107,12 @@ const CreateBlog = ({ router }) => {
     // console.log(e.target.value);
     const value = name === "photo" ? e.target.files[0] : e.target.value;
     formData.set(name, value);
-    setValues({ ...values, [name]: value, formData, error: "" });
+    setValues({ ...values, [name]: value, formData , error: "" });
   };
 
   const handleBody = (e) => {
+
+    // console.log(e)
     setBody(e);
     formData.set('body', e)
     if (typeof window !== "undefined") {
@@ -184,31 +184,9 @@ const CreateBlog = ({ router }) => {
     );
   };
 
-  const showError = () => (
-    <div
-      className="show-result"
-      style={{ display: error ? "" : "none" }}
-    >
-      {error}
-    </div>
-  );
-
-  const showSuccess = () => (
-    <div
-      className="show-result"
-      style={{ display: success ? "" : "none" }}
-    >
-      {success}
-    </div>
-  );
-
-  const showLoading = () => (
-    <div
-      style={{ display: loading ? "" : "none" }}
-    >
-    <RotatingLines width="100" strokeColor="silver" strokeWidth="2" />
-    </div>
-  );
+  const showError = () => (error ? <div className="alert alert-danger">{error}</div> : '');
+  const showMessage = () => (success ? <div className="alert alert-success">{success}</div> : '');
+  const showLoading = () => ( loading ?<div className="d-flex justify-content-center mt-4" style={{position : "fixed",right:"39vw",top:"33vh"}} >   <RotatingLines width="100" strokeColor="silver" strokeWidth="2" /> </div>: "");
 
   const createBlogForm = () => {
     return (
@@ -230,6 +208,7 @@ const CreateBlog = ({ router }) => {
             value={body}
             placeholder="Write something amazing..."
             onChange={handleBody}
+            preserveWhitespace={true}
           />
         </div>
 
@@ -242,20 +221,16 @@ const CreateBlog = ({ router }) => {
     );
   };
 
-  const mouseMoveHandler = e => {
-    setValues({ ...values, error: false, success: false,reload : false });
-  };
-  
 
 
   return (
     <div className="container-fluid pb-5">
       <div  className="row">
-        <div onMouseMove={mouseMoveHandler} className="col-md-8">
+        <div className="col-md-8">
           {createBlogForm()}
           <div  className="pt-3">
             {showError()}
-            {showSuccess()}
+            {showMessage()}
             {showLoading()}
           </div>
         </div>
