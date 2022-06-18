@@ -3,7 +3,7 @@ import { signIn ,authenticate ,isAuth} from "../../actions/auth";
 import {RotatingLines} from "react-loader-spinner"
 import Router from "next/router";
 import Link from 'next/link'
-// import LoginGoogle from './googlelogin';
+import LoginGoogle from './googlelogin';
 
 const SignInComponent = () => {
   const [values, setValues] = useState({
@@ -97,6 +97,7 @@ const SignInComponent = () => {
       {showLoading()}
       {showError()}
       {showMessage()}
+      <LoginGoogle />
       <br/>
       {showForm && SignInForm()}
       <br/>

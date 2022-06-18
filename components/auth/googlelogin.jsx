@@ -5,9 +5,12 @@ import GoogleLogin from 'react-google-login';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
 
+
+
 const LoginGoogle = () => {
-    const responseGoogle = response => {
-        // console.log(response);
+
+    const responseGoogle =  response => {
+        console.log(response);
         const tokenId = response.tokenId;
         const user = { tokenId };
 
@@ -24,12 +27,15 @@ const LoginGoogle = () => {
                 });
             }
         });
-    };
+    }
+   
+       
+
 
     return (
         <div className="pb-3">
             <GoogleLogin
-                clientId={`${GOOGLE_CLIENT_ID}`}
+                clientId="530785277692-2qjjh1ku8o25aeks9laje23dg6al2b97.apps.googleusercontent.com"
                 buttonText="Login with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}

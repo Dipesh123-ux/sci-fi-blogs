@@ -135,7 +135,7 @@ export const updateUser = (user, next) => {
 };
 
 export const loginWithGoogle = user => {
-  return fetch(`${API}/google/login`, {
+  return fetch(`${API}/google-login`, {
       method: 'POST',
       headers: {
           Accept: 'application/json',
