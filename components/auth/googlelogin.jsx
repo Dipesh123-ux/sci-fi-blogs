@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
-import GoogleLogin from 'react-google-login';
+import {GoogleLogin} from 'react-google-login';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
 
@@ -9,12 +9,11 @@ import { GOOGLE_CLIENT_ID } from '../../config';
 
 const LoginGoogle = () => {
 
-    const responseGoogle =  response => {
-        console.log(response);
-        const tokenId = response.tokenId;
-        const user = { tokenId };
+    const responseGoogle = async response => {
+        console.log(response.tokenId);
+        const token = response.tokenId;
 
-        loginWithGoogle(user).then(data => {
+        loginWithGoogle({token}).then(data => {
             if (data.error) {
                 console.log(data.error);
             } else {
@@ -28,6 +27,11 @@ const LoginGoogle = () => {
             }
         });
     }
+
+    const responseError = (err)=>{
+        console.log(err)
+        console.log('failed to authenticate')
+    }
    
        
 
@@ -35,11 +39,12 @@ const LoginGoogle = () => {
     return (
         <div className="pb-3">
             <GoogleLogin
-                clientId="530785277692-2qjjh1ku8o25aeks9laje23dg6al2b97.apps.googleusercontent.com"
+                clientId="505114108732-vnpj8g2aarqjdb5pado5u03661n7b3n2.apps.googleusercontent.com"
                 buttonText="Login with Google"
                 onSuccess={responseGoogle}
-                onFailure={responseGoogle}
+                onFailure={responseError}
                 theme="dark"
+                cookiePolicy='single_host_origin'
             />
         </div>
     );
