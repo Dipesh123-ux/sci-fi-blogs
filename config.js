@@ -2,7 +2,7 @@ import getConfig from "next/config";
 
 const { publicRuntimeConfig } = getConfig();
 
-export const API ="https://sci-fi-blogs.herokuapp.com/api";
+export const API ="https://web-production-1ac3.up.railway.app/api";
 
 export const APP_NAME = "SCI-FI-BLOGS";
 
